@@ -1,0 +1,89 @@
+﻿@model IEnumerable<WebApi1.Models.CropForSale>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CropType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CropName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoilPh)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DateOfSoldCrop)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Msp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SoldPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TotalPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.StatusOfCropSell)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CropType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CropName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoilPh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfSoldCrop)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Msp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SoldPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.StatusOfCropSell)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.User.AadharCard)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.CropId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.CropId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.CropId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

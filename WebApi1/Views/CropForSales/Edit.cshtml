@@ -1,0 +1,79 @@
+﻿@model WebApi1.Models.CropForSale
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>CropForSale</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="CropId" />
+            <div class="form-group">
+                <label asp-for="UserId" class="control-label"></label>
+                <select asp-for="UserId" class="form-control" asp-items="ViewBag.UserId"></select>
+                <span asp-validation-for="UserId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CropType" class="control-label"></label>
+                <input asp-for="CropType" class="form-control" />
+                <span asp-validation-for="CropType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CropName" class="control-label"></label>
+                <input asp-for="CropName" class="form-control" />
+                <span asp-validation-for="CropName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantity" class="control-label"></label>
+                <input asp-for="Quantity" class="form-control" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SoilPh" class="control-label"></label>
+                <input asp-for="SoilPh" class="form-control" />
+                <span asp-validation-for="SoilPh" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DateOfSoldCrop" class="control-label"></label>
+                <input asp-for="DateOfSoldCrop" class="form-control" />
+                <span asp-validation-for="DateOfSoldCrop" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Msp" class="control-label"></label>
+                <input asp-for="Msp" class="form-control" />
+                <span asp-validation-for="Msp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SoldPrice" class="control-label"></label>
+                <input asp-for="SoldPrice" class="form-control" />
+                <span asp-validation-for="SoldPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalPrice" class="control-label"></label>
+                <input asp-for="TotalPrice" class="form-control" />
+                <span asp-validation-for="TotalPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="StatusOfCropSell" class="control-label"></label>
+                <input asp-for="StatusOfCropSell" class="form-control" />
+                <span asp-validation-for="StatusOfCropSell" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
